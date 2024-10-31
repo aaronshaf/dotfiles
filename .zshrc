@@ -1,3 +1,5 @@
+alias dc="docker compose"
+
 u() {
   git add --all && git commit --amend --no-edit --no-verify
 }
