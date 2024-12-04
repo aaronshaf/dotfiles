@@ -36,6 +36,8 @@ function delb() {
     && [[ "$branch" != "master" ]] && git branch -D "$branch" || echo "Cannot delete master branch"
 }
 
+function whodoes() { git log --since="3 months ago" --pretty="%an" -- "$1" | sort | uniq -c | sort -rn; }
+
 function recent() {
   git diff --name-only HEAD~1 | xargs code
 }
